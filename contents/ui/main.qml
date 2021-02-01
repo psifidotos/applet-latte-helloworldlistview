@@ -44,8 +44,6 @@ Item {
                                       || plasmoid.location === PlasmaCore.Types.Desktop
     readonly property bool inPlasmaPanel: !latteBridge && !inDesktop
 
-    readonly property int thickness: appletAbilities.animations.hasThicknessAnimation ? appletAbilities.metrics.mask.thickness.zoomedForItems :
-                                                                                        appletAbilities.metrics.mask.thickness.normalForItems
 
     //BEGIN Latte Communicator
     property QtObject latteBridge: null
@@ -85,20 +83,7 @@ Item {
 
     ListView {
         id: list
-        anchors.bottom: plasmoid.location === PlasmaCore.Types.BottomEdge || inDesktop ? parent.bottom : undefined
-        anchors.top: plasmoid.location === PlasmaCore.Types.TopEdge ? parent.top : undefined
-        anchors.left: plasmoid.location === PlasmaCore.Types.LeftEdge ? parent.left : undefined
-        anchors.right: plasmoid.location === PlasmaCore.Types.RightEdge ? parent.right : undefined
-        anchors.horizontalCenter: plasmoid.formFactor !== PlasmaCore.Types.Vertical ? parent.horizontalCenter : undefined
-        anchors.verticalCenter: plasmoid.formFactor !== PlasmaCore.Types.Vertical ? undefined : parent.verticalCenter
-
-        width: plasmoid.formFactor !== PlasmaCore.Types.Vertical ? contentWidth : thickness
-        height: plasmoid.formFactor !== PlasmaCore.Types.Vertical ? thickness : contentHeight
-
         model: colorsModel
-
-        boundsBehavior: Flickable.StopAtBounds
-        orientation: plasmoid.formFactor === PlasmaCore.Types.Vertical ? Qt.Vertical : Qt.Horizontal
 
         delegate: AbilityItem.BasicItem{
             abilities: appletAbilities
