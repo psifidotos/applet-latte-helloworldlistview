@@ -33,8 +33,8 @@ Item {
     Layout.fillWidth: plasmoid.formFactor === PlasmaCore.Types.Vertical
     Layout.minimumWidth: -1
     Layout.minimumHeight: -1
-    Layout.preferredWidth: list.width
-    Layout.preferredHeight: list.height
+    Layout.preferredWidth: appletAbilities.layoutWidth
+    Layout.preferredHeight: appletAbilities.layoutHeight
     Layout.maximumWidth: -1
     Layout.maximumHeight: -1
 
