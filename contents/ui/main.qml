@@ -73,11 +73,11 @@ Item {
         }
         ListElement {
             color: "green"
-            tooltip: "World"
+            tooltip: "Latte"
         }
         ListElement {
             color: "blue"
-            tooltip: "!!!!"
+            tooltip: "World !!!"
         }
     }
 
