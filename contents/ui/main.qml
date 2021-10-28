@@ -88,7 +88,7 @@ Item {
         delegate: AbilityItem.BasicItem{
             abilities: appletAbilities
             thinTooltipText: model.tooltip
-            indicator.isTask: true
+            indicator.isApplet: true
             indicator.isActive: activated
 
             property bool activated: false
@@ -117,6 +117,14 @@ Item {
                         return (thick % 10 === 0) ? thick : thick.toFixed(1);
                     }
                 }
+
+              /*  PlasmaCore.IconItem {
+                    anchors.fill: parent
+                    roundToIconSize: false
+                    smooth: false
+                    source: "libreoffice-writer"
+                    visible: index === 0
+                }*/
             }
         }
     }
